@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 
-function Header() {
+function Header({onSearch, searchTerm}) {
+  
+
+
+
   return (
     <div>
       <header className="logo">
@@ -8,6 +12,8 @@ function Header() {
 
         {/* This is the search box */}
         <input
+        value={searchTerm}
+        onChange={(e) => onSearch(e.target.value)}
           style={{
             width: "500px",
             height: "20px",
@@ -26,3 +32,7 @@ function Header() {
 }
 
 export default Header;
+
+//create state
+//add value and onchange as props in input
+//has to have a callback function that is passed to app because we need to compare the search term to the titles and authors
